@@ -15,7 +15,6 @@ public class CuentaSueldo extends CuentaAhorro{
     public void setNomEmpresa(String nomEmpresa) {
         this.nomEmpresa = nomEmpresa;
     }
-
     @Override
     public String toString() {
         return "CuentaSueldo: nomEmpresa = " + nomEmpresa + "";

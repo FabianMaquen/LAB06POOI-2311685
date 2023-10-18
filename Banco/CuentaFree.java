@@ -9,7 +9,6 @@ public class CuentaFree extends CuentaAhorro{
     public boolean isNumLimitadoDeRetiro() {
         return numLimitadoDeRetiro;
     }
-
     public void setNumLimitadoDeRetiro(boolean numLimitadoDeRetiro) {
         this.numLimitadoDeRetiro = numLimitadoDeRetiro;
     }

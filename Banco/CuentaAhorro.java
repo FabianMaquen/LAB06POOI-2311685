@@ -23,7 +23,7 @@ public class CuentaAhorro {
         this.tasaDeInteresAnual=tasaInteresAnual;
         this.beneficios=beneficios;
     }
-    
+
     @Override
     public String toString() {
         return "CuentaAhorro [tasaDeInteresAnual=" + tasaDeInteresAnual + ", beneficios=" + Arrays.toString(beneficios)
