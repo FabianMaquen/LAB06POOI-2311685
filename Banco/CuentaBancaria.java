@@ -2,11 +2,11 @@ package Banco;
 
 import java.util.List;
 
-public class CuentaBancaria {
+public abstract class CuentaBancaria {
     private String numeroCuenta;
     private String descripcionCuenta;
     private String cuentaCCI;
-    private double saldoDisponible = 0;
+    protected double saldoDisponible = 0;
     private List<MovimientoCuenta> movimientos;
     private String estado;  // Variables constantes: Restringido, Bloqueado y Activo
 
@@ -18,10 +18,7 @@ public class CuentaBancaria {
         // Asignar el parametro cliente a clase Cliente
     }
 
-    public void calcularInteresMensual(){
-        double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
-        saldoDisponible += interesMensual;
-    }
+    public abstract void calcularInteresMensual();
 
     public String getNumeroCuenta() {
         return numeroCuenta;

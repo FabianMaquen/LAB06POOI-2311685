@@ -1,16 +1,16 @@
 package Banco;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class CuentaAhorro {
-    private double  tasaDeInteresAnual=0.03;
+public class CuentaAhorro extends CuentaBancaria {
+    private double tasaInteresAnual = 0.03;
     private String[] beneficios;
-    public double getTasaDeInteresAnual() {
-        return tasaDeInteresAnual;
+
+    public double getTasaInteresAnual() {
+        return tasaInteresAnual;
     }
-    public void setTasaDeInteresAnual(double tasaDeInteresAnual) {
-        this.tasaDeInteresAnual = tasaDeInteresAnual;
+    public void setTasaInteresAnual(double tasaInteresAnual) {
+        this.tasaInteresAnual = tasaInteresAnual;
     }
     public String[] getBeneficios() {
         return beneficios;
@@ -20,14 +20,16 @@ public class CuentaAhorro {
     }
     
     public void cuentaAhorro(double tasaInteresAnual, String[] beneficios){
-        this.tasaDeInteresAnual=tasaInteresAnual;
+        this.tasaInteresAnual=tasaInteresAnual;
         this.beneficios=beneficios;
     }
-
+    public void calcularInteresMensual(){
+        double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
+        saldoDisponible += interesMensual;
+    }
     @Override
     public String toString() {
-        return "CuentaAhorro [tasaDeInteresAnual=" + tasaDeInteresAnual + ", beneficios=" + Arrays.toString(beneficios)
-                + "]";
+        return "CuentaAhorro [tasaDeInteresAnual=" + tasaInteresAnual + ", beneficios=" + Arrays.toString(beneficios) + "]";
     }
     
 
