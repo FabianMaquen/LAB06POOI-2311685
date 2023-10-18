@@ -19,7 +19,8 @@ public class CuentaBancaria {
     }
 
     public void calcularInteresMensual(){
-
+        double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
+        saldoDisponible += interesMensual;
     }
 
     public String getNumeroCuenta() {
