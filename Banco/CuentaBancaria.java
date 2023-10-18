@@ -1,13 +1,13 @@
 package Banco;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class CuentaBancaria {
     private String numeroCuenta;
     private String descripcionCuenta;
     private String cuentaCCI;
     private double saldoDisponible = 0;
-    private MovimientoCuenta[] movimientos;
+    private List<MovimientoCuenta> movimientos;
     private String estado;  // Variables constantes: Restringido, Bloqueado y Activo
 
 
@@ -54,13 +54,15 @@ public class CuentaBancaria {
     public void setSaldoDisponible(double saldo) {
         this.saldoDisponible = saldo;
     }
-
-    public MovimientoCuenta[] getMovimientos() {
+    
+    public List<MovimientoCuenta> getMovimientos() {
         return movimientos;
     }
 
     @Override
     public String toString() {
-        return "CuentaBancaria [numeroCuenta=" + numeroCuenta + ", descripcionCuenta=" + descripcionCuenta + ", cuentaCCI=" + cuentaCCI + ", saldoDisponible=" + saldoDisponible + ", movimientos=" + Arrays.toString(movimientos) + ", estado=" + estado + "]";
+        return "CuentaBancaria [numeroCuenta=" + numeroCuenta + ", descripcionCuenta=" + descripcionCuenta + ", cuentaCCI=" + cuentaCCI + ", saldoDisponible=" + saldoDisponible + ", movimientos=" + movimientos + ", estado=" + estado + "]";
     }
+
+    
 }
