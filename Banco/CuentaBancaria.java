@@ -10,7 +10,10 @@ public abstract class CuentaBancaria {
     private List<MovimientoCuenta> movimientos;
     private String estado;  // Variables constantes: Restringido, Bloqueado y Activo
 
+    public CuentaBancaria(){
 
+    }
+    
     public CuentaBancaria(String numCuenta, String descripcion, String cuentaCCI, Cliente cliente) {
         this.numeroCuenta = numCuenta;
         this.descripcionCuenta = descripcion;
@@ -18,32 +21,30 @@ public abstract class CuentaBancaria {
         // Asignar el parametro cliente a clase Cliente
     }
 
-    public abstract void calcularInteresMensual();
-
     public String getNumeroCuenta() {
         return numeroCuenta;
     }
-
+    
     public void setNumeroCuenta(String numCuenta) {
         this.numeroCuenta = numCuenta;
     }
-
+    
     public String getDescripcionCuenta() {
         return descripcionCuenta;
     }
-
+    
     public void setDescripcionCuenta(String descripcion) {
         this.descripcionCuenta = descripcion;
     }
-
+    
     public String getCuentaCCI() {
         return cuentaCCI;
     }
-
+    
     public void setCuentaCCI(String cci) {
         this.cuentaCCI = cci;
     }
-
+    
     public double getSaldoDisponible() {
         return saldoDisponible;
     }
@@ -55,11 +56,13 @@ public abstract class CuentaBancaria {
     public List<MovimientoCuenta> getMovimientos() {
         return movimientos;
     }
+    
+    public abstract void calcularInteresMensual();
 
     @Override
     public String toString() {
         return "CuentaBancaria [numeroCuenta=" + numeroCuenta + ", descripcionCuenta=" + descripcionCuenta + ", cuentaCCI=" + cuentaCCI + ", saldoDisponible=" + saldoDisponible + ", movimientos=" + movimientos + ", estado=" + estado + "]";
     }
-
+    
     
 }

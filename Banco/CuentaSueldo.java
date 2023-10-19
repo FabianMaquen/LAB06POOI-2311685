@@ -1,24 +1,22 @@
 package Banco;
 public class CuentaSueldo extends CuentaAhorro{
-    private String nomEmpresa;
+    private String nombreEmpresa;
 
-    public CuentaSueldo(String nomEmpresa) {
-        this.nomEmpresa = nomEmpresa;
-        
 
+    public CuentaSueldo(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
     }
 
     public String getNomEmpresa() {
-        return nomEmpresa;
+        return nombreEmpresa;
     }
 
-    public void setNomEmpresa(String nomEmpresa) {
-        this.nomEmpresa = nomEmpresa;
+    public void setNomEmpresa(String nombreempresa) {
+        this.nombreEmpresa = nombreempresa;
     }
+
     @Override
     public String toString() {
-        return "CuentaSueldo: nomEmpresa = " + nomEmpresa + "";
-    } 
-    
-        
+        return "CuentaSueldo: nombreEmpresa = " + nombreEmpresa + "";
+    }  
 }

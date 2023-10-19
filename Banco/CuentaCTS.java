@@ -1,9 +1,10 @@
 package Banco;
-public class CuentaCTS {
+public class CuentaCTS extends CuentaBancaria {
 	private double tasaInteresAnual = 0.07;
 	private double puntos;
+
+
 	public CuentaCTS(double puntos) {
-		super();
 		this.puntos = puntos;
 	}
 	public double getPuntos() {
@@ -12,11 +13,17 @@ public class CuentaCTS {
 	public void setPuntos(double puntos) {
 		this.puntos = puntos;
 	}
+
+	
+	@Override
+	public void calcularInteresMensual() {
+		double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
+        saldoDisponible += interesMensual; 
+	}
+
 	@Override
 	public String toString() {
-		return "CuentaCTS [tasaInteresAnual=" + tasaInteresAnual + ", puntos=" + puntos + "]";
+		return super.toString() + "CuentaCTS [tasaInteresAnual=" + tasaInteresAnual + ", puntos=" + puntos + "]";
 	}
-	
-	
 	
 }

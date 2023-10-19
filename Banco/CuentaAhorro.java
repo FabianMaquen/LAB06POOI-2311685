@@ -6,33 +6,37 @@ public class CuentaAhorro extends CuentaBancaria {
     private double tasaInteresAnual = 0.03;
     private String[] beneficios;
 
-    public double getTasaInteresAnual() {
-        return tasaInteresAnual;
+
+    public CuentaAhorro(){
+
     }
-    public void setTasaInteresAnual(double tasaInteresAnual) {
+
+    public CuentaAhorro(double tasaInteresAnual, String[] beneficios){
         this.tasaInteresAnual = tasaInteresAnual;
+        this.beneficios = beneficios;
     }
+
+
+    public void setCuentaAhorro(double cuentaahorro){
+
+    }
+
     public String[] getBeneficios() {
         return beneficios;
     }
+
     public void setBeneficios(String[] beneficios) {
         this.beneficios = beneficios;
     }
-    
-    public void cuentaAhorro(double tasaInteresAnual, String[] beneficios){
-        this.tasaInteresAnual=tasaInteresAnual;
-        this.beneficios=beneficios;
-    }
-    public void calcularInteresMensual(){
+
+    @Override
+    public void calcularInteresMensual() {
         double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
-        saldoDisponible += interesMensual;
+        saldoDisponible += interesMensual;  
     }
+
     @Override
     public String toString() {
-        return "CuentaAhorro [tasaDeInteresAnual=" + tasaInteresAnual + ", beneficios=" + Arrays.toString(beneficios) + "]";
+        return super.toString() + "CuentaAhorro [tasaInteresAnual=" + tasaInteresAnual + ", beneficios=" + Arrays.toString(beneficios) + "]";
     }
-    
-
-
-
 }

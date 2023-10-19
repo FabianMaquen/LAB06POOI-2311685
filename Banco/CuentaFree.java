@@ -2,6 +2,7 @@ package Banco;
 public class CuentaFree extends CuentaAhorro{
     private boolean numLimitadoDeRetiro;
 
+
     public CuentaFree(boolean numLimitadoDeRetiro) {
         this.numLimitadoDeRetiro = numLimitadoDeRetiro;
     }
@@ -17,5 +18,4 @@ public class CuentaFree extends CuentaAhorro{
     public String toString() {
         return "CuentaFree: numLimitadoDeRetiro=" + numLimitadoDeRetiro + "]";
     }
-    
 }
