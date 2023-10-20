@@ -1,63 +1,78 @@
 package Banco;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class MovimientoCuenta {
-   private String numOperacion;
-   private String descripcion;
-   private Date fecha;
-   private Double importe;
-   private String tipoOperacion;
+	
+	private String numOperacion;
+	private String descripcion;
+	private LocalDate fecha;
+	private Double importe;
+	private String tipoOperacion;
+	
+	
+	public MovimientoCuenta(String numOperacion, String descripcion, LocalDate fecha, double importe, String tipoOperacion) {
+		this.numOperacion = numOperacion;
+		this.descripcion = descripcion;
+		this.fecha = fecha;
+		this.importe = importe;
+		this.tipoOperacion = tipoOperacion;
+	}
 
-   public MovimientoCuenta(String numOperacion, String descripcion, Date fecha, double importe, String tipoOperacion) {
-      this.numOperacion = numOperacion;
-      this.descripcion = descripcion;
-      this.fecha = fecha;
-      this.importe = importe;
-      this.tipoOperacion = tipoOperacion;
-   }
+	public String getNumOperacion() {
+		return numOperacion;
+	}
 
-   public String getNumOperacion() {
-      return this.numOperacion;
-   }
 
-   public void setNumOperacion(String numOperacion) {
-      this.numOperacion = numOperacion;
-   }
+	public void setNumOperacion(String numOperacion) {
+		this.numOperacion = numOperacion;
+	}
 
-   public String getDescripcion() {
-      return this.descripcion;
-   }
 
-   public void setDescripcion(String descripcion) {
-      this.descripcion = descripcion;
-   }
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-   public Date getFecha() {
-      return this.fecha;
-   }
 
-   public void setFecha(Date fecha) {
-      this.fecha = fecha;
-   }
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
-   public Double getImporte() {
-      return this.importe;
-   }
 
-   public void setImporte(Double importe) {
-      this.importe = importe;
-   }
+	public LocalDate getFecha() {
+		return fecha;
+	}
 
-   public String getTipoOperacion() {
-      return this.tipoOperacion;
-   }
 
-   public void setTipoOperacion(String tipoOperacion) {
-      this.tipoOperacion = tipoOperacion;
-   }
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
 
-   public String toString() {
-      return "NumOperacion: " + this.numOperacion + "\nDescripcion: " + this.descripcion + "\nFecha: " + this.fecha + "\nImporte:" + this.importe + "\nTipo Operacion:" + this.tipoOperacion;
-   }
+
+	public Double getImporte() {
+		return importe;
+	}
+
+
+	public void setImporte(Double importe) {
+		this.importe = importe;
+	}
+
+
+	public String getTipoOperacion() {
+		return tipoOperacion;
+	}
+
+
+	public void setTipoOperacion(String tipoOperacion) {
+		this.tipoOperacion = tipoOperacion;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "\nNumero de Operación: " + numOperacion + "\nDescripción: " + descripcion + "\nFecha: " + fecha + "\nImporte: S/" + importe + "\nTipo Operación: " + tipoOperacion + "\n----------------------------";
+	}
+	
 }

@@ -37,6 +37,6 @@ public class CuentaAhorro extends CuentaBancaria {
 
     @Override
     public String toString() {
-        return super.toString() + "CuentaAhorro [tasaInteresAnual=" + tasaInteresAnual + ", beneficios=" + Arrays.toString(beneficios) + "]";
+        return super.toString() + "CuentaAhorro\nTasa de Interes Anual: " + tasaInteresAnual + "\nBeneficios: " + Arrays.toString(beneficios);
     }
 }
