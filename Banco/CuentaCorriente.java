@@ -15,7 +15,6 @@ public class CuentaCorriente extends CuentaBancaria{
 		this.maxRetiro = maxRetiro;
 	}
 
-	@Override
 	public void calcularInteresMensual() {
 		double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
         saldoDisponible += interesMensual; 

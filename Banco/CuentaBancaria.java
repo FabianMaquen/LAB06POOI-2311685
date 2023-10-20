@@ -2,7 +2,7 @@ package Banco;
 
 import java.util.List;
 
-public abstract class CuentaBancaria {
+public class CuentaBancaria {
     private String numeroCuenta;
     private String descripcionCuenta;
     private String cuentaCCI;
@@ -53,11 +53,18 @@ public abstract class CuentaBancaria {
         this.saldoDisponible = saldo;
     }
     
+    public void setMovimientos(List<MovimientoCuenta> movimientos) {
+        this.movimientos = movimientos;
+    }
+
     public List<MovimientoCuenta> getMovimientos() {
         return movimientos;
     }
     
-    public abstract void calcularInteresMensual();
+    public void calcularInteresMensual(){
+        double interesMensual = 0;
+        saldoDisponible += interesMensual;  
+    };
 
     @Override
     public String toString() {

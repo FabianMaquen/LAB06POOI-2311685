@@ -14,8 +14,6 @@ public class CuentaCTS extends CuentaBancaria {
 		this.puntos = puntos;
 	}
 
-	
-	@Override
 	public void calcularInteresMensual() {
 		double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
         saldoDisponible += interesMensual; 

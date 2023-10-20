@@ -29,7 +29,6 @@ public class CuentaAhorro extends CuentaBancaria {
         this.beneficios = beneficios;
     }
 
-    @Override
     public void calcularInteresMensual() {
         double interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
         saldoDisponible += interesMensual;  
