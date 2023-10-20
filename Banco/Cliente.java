@@ -76,15 +76,14 @@ public class Cliente {
     public void setCuentas(List<CuentaBancaria> cuentas){
         this.cuentas = cuentas;
     }
-
+    
     public List<EventoBancario> getEventoBancarios() {
         return eventoBancarios;
     }
-
+    
     public void setEventoBancarios(List<EventoBancario> eventoBancarios) {
         this.eventoBancarios = eventoBancarios;
     }
-    
     
     @Override
     public String toString() {

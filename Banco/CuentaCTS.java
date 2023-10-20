@@ -21,7 +21,7 @@ public class CuentaCTS extends CuentaBancaria {
 
 	@Override
 	public String toString() {
-		return super.toString() + "CuentaCTS [tasaInteresAnual=" + tasaInteresAnual + ", puntos=" + puntos + "]";
+		return "\n\nCUENTA CTS:\nTasaInteresAnual: " + tasaInteresAnual + "\nPuntos=" + puntos;
 	}
 	
 }

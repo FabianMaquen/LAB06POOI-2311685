@@ -1,20 +1,20 @@
 package Banco;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class EventoBancario {
-    private Date fecha;
+    private LocalDate fecha;
     private String tituloEvento;
     private String descripcionEvento;
 
-    public EventoBancario(Date fecha, String tituloEvento, String descripcionEvento){
+    public EventoBancario(LocalDate fecha, String tituloEvento, String descripcionEvento){
         this.fecha = fecha;
         this.tituloEvento = tituloEvento;
         this.descripcionEvento = descripcionEvento;   
     }
-    public Date getFecha(){
+    public LocalDate getFecha(){
         return fecha;
     }
-    public void setFecha(Date fecha){
+    public void setFecha(LocalDate fecha){
         this.fecha = fecha;
     }
     public String getTituloEvento(){
@@ -29,6 +29,8 @@ public class EventoBancario {
     public void setDescripcionEvento(String descripcionEvento){
         this.descripcionEvento = descripcionEvento;
     }
+
+    
     @Override
     public String toString() {
         return "Fecha: " + fecha + "\nTitulo del evento: " + tituloEvento + "\nDescripción del evento: " + descripcionEvento;

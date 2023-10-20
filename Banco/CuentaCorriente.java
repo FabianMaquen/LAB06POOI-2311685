@@ -22,7 +22,7 @@ public class CuentaCorriente extends CuentaBancaria{
 
 	@Override
 	public String toString() {
-		return super.toString() + "CuentaCorriente [tasaInteresAnual=" + tasaInteresAnual + ", COMISION_FIJA=" + COMISION_FIJA + ", maxRetiro=" + maxRetiro + "]";
+		return "\n\nCUENTA CORRIENTE: \nTasaInteresAnual: " + tasaInteresAnual + "\nCOMISION_FIJA: " + COMISION_FIJA + "\nmaxRetiro:" + maxRetiro;
 	}
 	
 }
