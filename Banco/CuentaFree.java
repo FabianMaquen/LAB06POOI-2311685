@@ -16,6 +16,6 @@ public class CuentaFree extends CuentaAhorro{
 
     @Override
     public String toString() {
-        return super.toString() + "CuentaFree: El numero limitado de retiro es " + numLimitadoDeRetiro;
+        return super.toString() + "\nCUENTA FREE:\nExiste numero de retiros: " + numLimitadoDeRetiro;
     }
 }

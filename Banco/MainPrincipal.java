@@ -31,10 +31,14 @@ public class MainPrincipal {
         //Saldos de las cuentas de Sueldo y Free
         cuentaAhorroSueldo.setSaldoDisponible(1500.00);
         cuentaAhorroFree.setSaldoDisponible(20000.00);
+        double cuentaSueldoInicial = cuentaAhorroSueldo.getSaldoDisponible();
+        double cuentaFreeInicial = cuentaAhorroFree.getSaldoDisponible();
 
         // Calcula el nuevo saldo de las cuentas de ahorros por todo el año
-        cuentaAhorroSueldo.calcularInteresMensual();
-        cuentaAhorroFree.calcularInteresMensual();
+        for (int i = 0; i < 12; i++) {   
+            cuentaAhorroSueldo.calcularInteresMensual();
+            cuentaAhorroFree.calcularInteresMensual();
+        }
 
         // La cuenta Sueldo tiene 5 beneficios
         cuentaAhorroSueldo.setBeneficios(new String[] {"ropa", "restaurante", "conciertos", "vuelos", "hotel"});
@@ -62,12 +66,13 @@ public class MainPrincipal {
         cuentaAhorroFree.setBeneficios(new String[] {"teatro", "restaurante", "cursos"});
 
         // Cada cuenta bancaria calcula su propio saldo de acuerdo a la tasa de interes anual
-        // Ya se calcularon los saldos de las cuenta de ahorro de sueldo y free 
-        // cuentaAhorroFree.calcularInteresMensual();
-        // cuentaAhorroSueldo.calcularInteresMensual();
-        cuentaCorriente1.calcularInteresMensual();
-        cuentaCorriente2.calcularInteresMensual();
-        cuentaCTS.calcularInteresMensual();
+
+        for (int i = 0; i < 12; i++) {
+            // Ya se calcularon los saldos de las cuenta de ahorro de sueldo y free 
+            cuentaCorriente1.calcularInteresMensual();
+            cuentaCorriente2.calcularInteresMensual();
+            cuentaCTS.calcularInteresMensual();
+        }
 
 
     	// Una cuenta bancaria tiene 10 movimientos, los cuales son ordenados por fecha ascendente
@@ -115,25 +120,61 @@ public class MainPrincipal {
         Collections.sort(movimientos, comparadorPorFecha);
 
         
-        // IMPRIME TODOS LOS TRABAJOS
+
+
+        // IMPRIME LO QUE PIDEN LOS 10 POSITS
 
         //1
         System.out.println(cuentasCliente1.toString() + "\n\n");
 
         //2
-        //System.out.println(cuentaCTS.getPuntos());
+        System.out.println("La cuenta CTS contiene: " + cuentaCTS.getPuntos() + " puntos");
 
         //3
-        //System.out.println(cuentaAhorroSueldo.getSaldoDisponible());
-        //System.out.println(cuentaAhorroFree.getSaldoDisponible());
+        System.out.println("\nSaldo de la cuenta Ahorro Inicial: S/" +  cuentaSueldoInicial);
+        System.out.println("\nSaldo de la cuenta Free Inicial: S/" + cuentaFreeInicial);
 
         //4
+        System.out.println("\nCantidad de retiros en cajero de la cuenta Corriente: " + cuentaCorriente1.getMaxRetiro());
 
-        
+        //5 el nuevo saldo de las cuentas de ahorros por todo el año.
+        System.out.println("\nLos nuevos saldos de las cuentas de ahorro por todo el año es: ");
+        System.out.println("\nCuenta Sueldo: S/" + cuentaAhorroSueldo.getSaldoDisponible());
+        System.out.println("\nCuenta Free: S/" + cuentaAhorroFree.getSaldoDisponible());
+
+        //6
+        System.out.println("\nLa cuenta sueldo tiene 5 beneficios: ");
+        String[] beneficiosSueldo = cuentaAhorroSueldo.getBeneficios();
+        for (String beneficio : beneficiosSueldo) {
+            System.out.print(beneficio + " / ");
+        }
+        System.out.println("\n");
+
+        // 7
+        System.out.println("Cliente " + cliente1.getNombre() + " puede asistir a " + evento.size()  + " eventos bancarios anualmente.");
+
+        // 8
+        System.out.println("\nLa cuenta free tiene 3 beneficios: ");
+        String[] beneficiosFree = cuentaAhorroFree.getBeneficios();
+        for (String beneficio : beneficiosFree) {
+            System.out.print(beneficio + " / ");
+        }
+        System.out.println("\n");
+
+    
+        //9
+        System.out.println("Los nuevos saldos de las cuentas bancarias por todo el año es: ");
+        System.out.println("\nCuenta Sueldo: S/" + cuentaAhorroSueldo.getSaldoDisponible());
+        System.out.println("\nCuenta Free: S/" + cuentaAhorroFree.getSaldoDisponible());
+        System.out.println("\nCuenta Corriente-1: S/" + cuentaCorriente1.getSaldoDisponible());
+        System.out.println("\nCuenta Corriente-2: S/" + cuentaCorriente2.getSaldoDisponible());
+        System.out.println("\nCuenta CTS: S/" + cuentaCTS.getSaldoDisponible());
+
+
         // 10
-        // for (MovimientoCuenta movimiento : movimientos) {
-        //         System.out.println(movimiento.toString());
-        // }
+        System.out.println("\nUna cuenta bancaria tiene 10 movimientos (CuentaCorriente-1): ");
+        for (MovimientoCuenta movimiento : movimientos) {
+            System.out.println(movimiento.toString());
+        }
     }
 }
-
